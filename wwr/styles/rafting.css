@@ -77,7 +77,7 @@ header {
     font-family: var(--heading-font);
 }
 
-/* Article superpuesto sobre la imagen */
+
 .hero article {
     position: absolute;
     bottom: 20px;
@@ -89,7 +89,7 @@ header {
     font-family: var(--body-font);
 }
 
-/* Imagen dentro del article (cliente feliz) */
+
 .hero article img {
     float: right;
     width: 125px;
