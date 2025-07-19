@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4e8ab0;
+    --secondary-color: #276baf;
+    --accent1-color: #e1951b;
+    --accent2-color: #1b70bf;
+    --heading-font: "Playfair Display", sans-serif;
+    --body-font: "Roboto", sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    background-color: white;
+}
+
+header,
+main,
+footer {
+    width: 840px;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
