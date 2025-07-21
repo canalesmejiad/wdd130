@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: "Playfair", serif;
+    font-family: var(--body-font);
     color: var(--accent1-color);
     background-color: white;
 }
