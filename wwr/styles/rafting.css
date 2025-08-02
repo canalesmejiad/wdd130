@@ -261,3 +261,46 @@ footer p {
     font-weight: bold;
     background-color: #fff;
 }
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto 2rem rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label,
+.contact-form legend {
+    font-weight: bold;
+}
+
+.contact-form input[type="text"] .contact-form input[type="email"] .contact-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form fieldset {
+    border: none;
+    padding: 0;
+}
+
+.contact-form button.submit-btn {
+    background-color: #07c;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button.submit-btn:hover {
+    background-color: #005fa3;
+}
