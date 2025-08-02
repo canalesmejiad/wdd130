@@ -294,14 +294,14 @@ article {
 footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     flex-wrap: wrap;
     max-width: 840px;
     margin: 0 auto;
     padding: 1rem;
-    background-color: #07c;
-    color: white;
-    text-align: center;
+    background-color: white;
+    color: black;
+    text-align: left;
 }
 
 footer p {
