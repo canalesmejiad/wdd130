@@ -215,7 +215,7 @@ article {
 
 .team-gallery {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 2rem;
 }
@@ -293,8 +293,8 @@ article {
 /* ==== Footer ==== */
 footer {
     display: flex;
-    justify-content: center;
-    align-items: right;
+    justify-content: flex-end;
+    align-items: center;
     flex-wrap: wrap;
     max-width: 840px;
     margin: 0 auto;
