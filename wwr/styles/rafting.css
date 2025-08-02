@@ -293,15 +293,15 @@ article {
 /* ==== Footer ==== */
 footer {
     display: flex;
-    justify-content: space-between;
-    align-items: left;
+    justify-content: flex-end;
+    align-items: right;
     flex-wrap: wrap;
     max-width: 840px;
     margin: 0 auto;
     padding: 1rem;
     background-color: white;
     color: black;
-    text-align: left;
+    text-align: right;
 }
 
 footer p {
@@ -311,7 +311,7 @@ footer p {
 footer .socialmedia {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: right;
     flex: 1 1 100%;
     margin-top: 1rem;
 }
