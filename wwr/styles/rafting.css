@@ -215,8 +215,8 @@ article {
 
 .team-gallery {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
 }
 
