@@ -35,33 +35,24 @@
             <p>We'd love to hear from you! Reach out with any questions, trip inquiries, or feedback. We are here to
                 help you plan your next adventure.</p>
 
-            <form action="submit-form.php" method="post">
+            <form action="submit-form.php" method="post" class="contact-form">
                 <label for="fullname">Full Name:</label>
                 <input type="text" id="fullname" name="fullname" required>
 
                 <fieldset>
                     <legend>Purpose of Message</legend>
-                    <label>
-                        <input type="radio" name="purpose" value="general" required>
-                        General Inquiry
-                    </label><br>
-                    <label>
-                        <input type="radio" name="purpose" value="reservation">
-                        Reservation Question
-                    </label><br>
-                    <label>
-                        <input type="radio" name="purpose" value="suggestion">
-                        Website Suggestion
-                    </label>
+                    <label><input type="radio" name="purpose" value="general" required>General Inquiry</label><br>
+                    <label><input type="radio" name="purpose" value="reservation" required>Reservation
+                        Question</label><br>
+                    <label><input type="radio" name="purpose" value="suggestion" required>Website Suggestion</label><br>
                 </fieldset>
 
                 <label for="message">Message</label>
                 <textarea name="message" id="message" rows="5" required></textarea>
 
-                <label>
-                    <input type="checkbox" name="subscribe" value="yes">
-                    Please subscribe me to the monthly newsletter
-                </label>
+                <label><input type="checkbox" name="subscribe" value="yes">Please Subscribe me to the monthly
+                    newsletter</label>
+
 
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
@@ -72,6 +63,7 @@
                 <p>123 Rapids Lane<br>River City, RC 99999</p>
                 <p>Phone: (123) 456 7890</p>
                 <p>Email: contact@extremerafting.com</p>
+
                 <div class="map-container">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11454.400367039521!2d-122.85298629138974!3d45.70189203862284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1754112933193!5m2!1sen!2sus"
@@ -80,6 +72,7 @@
                     </iframe>
                 </div>
             </div>
+
             <div class="Team">
                 <h2>Meet Our Team</h2>
                 <div class="team-gallery">
