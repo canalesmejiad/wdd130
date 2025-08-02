@@ -217,6 +217,13 @@ footer p {
     height: 32px;
 }
 
+/* == Map EMBED == */
+.map-container {
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
 /* === Team Gallery === */
 .team {
     margin: 3rem;
