@@ -3,6 +3,7 @@
    Author: David Canales
    =============================== */
 
+/* ===== RESET & TOKENS ===== */
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +17,7 @@
     --accent2-color: #1b70bf;
     --heading-font: "Playfair Display", serif;
     --body-font: "Roboto", sans-serif;
+
     --content-max: 840px;
     --radius: 8px;
     --shadow: 0 0 6px rgba(0, 0, 0, .10);
@@ -40,10 +42,10 @@ footer {
     margin: 0 auto;
 }
 
-section,
-article,
+/* no aplicamos margin/padding global a <nav> para no romper el header */
 p,
-nav {
+section,
+article {
     margin: 16px;
     padding: 8px;
 }
@@ -61,10 +63,11 @@ img {
     height: auto;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER (uniforme) ===== */
 header {
     display: grid;
     grid-template-columns: auto 1fr auto;
+    /* logo | título | nav */
     align-items: center;
     gap: 1rem;
     padding: .75rem 2rem;
@@ -78,44 +81,52 @@ header {
 
 header h1 {
     text-align: center;
-    font-family: var(--heading-font);
     font-weight: 700;
     font-size: clamp(1.4rem, 3.2vw, 2.6rem);
-    color: #212121;
+    color: #2a2a2a;
+    letter-spacing: .3px;
 }
 
-nav ul {
+header nav {
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul {
     display: flex;
     align-items: center;
     gap: 3rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-nav a {
+header nav a {
     text-decoration: none;
     font-weight: 700;
     color: #000;
+    padding: .25rem 0;
 }
 
-nav a:hover {
+header nav a:hover {
     opacity: .85;
 }
 
-@media (max-width: 700px) {
+@media (max-width:700px) {
     header {
         grid-template-columns: 1fr;
         justify-items: center;
         text-align: center;
     }
 
-    nav ul {
+    header nav ul {
         gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
     }
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (home) ===== */
 .hero {
     position: relative;
 }
@@ -157,7 +168,7 @@ nav a:hover {
     border-radius: var(--radius);
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
     .hero img {
         max-height: 320px;
     }
@@ -167,7 +178,7 @@ nav a:hover {
     }
 }
 
-/* ===== ADVENTURES ===== */
+/* ===== ADVENTURES (galería pequeña) ===== */
 .adventures {
     text-align: center;
 }
@@ -197,7 +208,7 @@ nav a:hover {
     color: #333;
 }
 
-/* ===== HISTORY ===== */
+/* ===== HISTORY (about) ===== */
 .history {
     padding: 2rem;
     background: #f7f7f7;
@@ -229,28 +240,32 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, .35);
 }
 
-@media (max-width: 980px) {
+@media (max-width:980px) {
     .history-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* ===== TEAM ===== */
+/* ===== TEAM (contact) — UNA SOLA FILA ===== */
 .team {
     margin: 3rem;
 }
 
+/* 🔹 fila única en pantallas anchas; centradas */
 .team-gallery {
     display: flex;
+    flex-wrap: nowrap;
+    /* evita saltar de fila en desktop */
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
-    flex-wrap: wrap;
-    /* permite que baje a otra línea si no hay espacio */
 }
 
 .team-gallery figure {
-    width: 250px;
+    flex: 1 1 0;
+    /* reparten espacio por igual */
+    max-width: 260px;
+    /* tope para que 3 quepan lado a lado */
     background: #fdfdfd;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -268,7 +283,14 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* ===== MAP ===== */
+/* En móviles, sí permitimos que bajen a otra fila */
+@media (max-width:900px) {
+    .team-gallery {
+        flex-wrap: wrap;
+    }
+}
+
+/* ===== MAP (contact) ===== */
 .map-container {
     border-radius: var(--radius);
     overflow: hidden;
@@ -327,7 +349,7 @@ nav a:hover {
     background: #005fa3;
 }
 
-/* ===== TRIPS ===== */
+/* ===== TRIPS (cards + table) ===== */
 .trips-grid {
     display: grid;
     gap: .75rem;
@@ -354,7 +376,13 @@ nav a:hover {
 
 .trips-grid .card-body h2 {
     font-size: 1.05rem;
+    color: #2a2a2a;
     margin-bottom: .25rem;
+}
+
+.trips-grid .card-body p,
+.trips-grid .card-body li {
+    font-size: .95rem;
 }
 
 .trips-grid ul {
@@ -407,6 +435,10 @@ footer {
     text-align: center;
 }
 
+footer p {
+    margin: 0;
+}
+
 footer .socialmedia {
     display: flex;
     gap: 1rem;
@@ -419,17 +451,13 @@ footer .socialmedia img {
     height: 30px;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
+/* ===== EXTRA RESPONSIVE ===== */
+@media (max-width:600px) {
     .adventure-gallery figure {
         flex: 1 1 45%;
     }
 
     .trips-grid {
         grid-template-columns: 1fr;
-    }
-
-    .team-gallery {
-        justify-content: center;
     }
 }
