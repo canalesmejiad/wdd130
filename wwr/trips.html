@@ -17,22 +17,17 @@
 <body>
 
     <!-- HEADER -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="index.html">
-                <span class="brand-logo">XR</span>
-                <span class="brand-name">Extreme Rafting</span>
-            </a>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="trips.html" aria-current="page">Trips</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a class="btn btn-primary" href="trips.html">Book Now</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <img class="logo" src="images/z-crossedoars.jpeg" alt="Rafting Company Logo">
+        <h1>Extreme Rafting adventures</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="trips.html">Trips</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="section">
@@ -127,23 +122,14 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="container foot">
-            <div>
-                <h3>Extreme Rafting</h3>
-                <p class="muted">123 River Road, Rapids City, WA • (360) 555-0199 • hello@extremerafting.com</p>
-                <ul class="social">
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">YouTube</a></li>
-                </ul>
-                <!-- Link to wireframe image -->
-                <p><a href="images/water_rafting_routes.jpg" target="_blank">View Trips Page Wireframe</a></p>
-            </div>
-            <small class="muted">© <span id="year"></span> Extreme Rafting • All rights reserved.</small>
-        </div>
+    <footer>
+        <p>© 2025 Extreme Rafting Adventure | David Canales</p>
+        <nav class="socialmedia">
+            <a href="https://facebook.com"><img src="images/facebook.png" alt="Facebook - visit our page"></a>
+            <a href="https://twitter.com"><img src="images/twitter.png" alt="Twitter - visit our page"></a>
+            <a href="https://instagram.com"><img src="images/instagram.png" alt="Instagram - visit our page"></a>
+        </nav>
     </footer>
-
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>

@@ -17,24 +17,18 @@
 
 <body>
     <!-- Header (keep identical across site)-->
-    <header class="site-header">
-        <div class="container header-inner" role="navigation" aria-label="Main">
-            <a class="brand" href="index.html">
-                <span class="brand-logo" aria-hidden="true">XR</span>
-                <span class="brand-name">Extreme Rafting</span>
-            </a>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html" aria-current="page">Home</a></li>
-                    <li><a href="trip.html">Trips</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
-                    <li><a class="btn btn-primary" href="trips.html">Book Now</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <img class="logo" src="images/z-crossedoars.jpeg" alt="Rafting Company Logo">
+        <h1>Extreme Rafting adventures</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="trips.html">Trips</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
-
     <main>
         <!-- HERO: full-width image with absolute heading overlay-->
         <section class="hero" aria-label="Rafting hero">
@@ -96,7 +90,8 @@
                 <div>
                     <h2>Ready to pick your trip?</h2>
                     <p class="muted">Midweek special: <strong>15% off Tue-Thu</strong> with code
-                        <strong>FLOW15</strong>.</p>
+                        <strong>FLOW15</strong>.
+                    </p>
                 </div>
                 <p><a class="btn btn-primary" href="trips.html" aria-label="Go to trips page">Explore Trips</a></p>
             </div>
@@ -121,21 +116,14 @@
         </section>
     </main>
     <!-- Footer (keep identical across site) -->
-    <footer class="site-footer">
-        <div class="container foot">
-            <div>
-                <h3>Extreme Rafting</h3>
-                <p class="muted">123 River Road, Rapids City, WA • (360) 555‑0199 • hello@extremerafting.com</p>
-                <ul class="social">
-                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
-                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
-                    <li><a href="#" aria-label="YouTube">YouTube</a></li>
-                </ul>
-            </div>
-            <small class="muted">© <span id="year"></span> Extreme Rafting • All rights reserved.</small>
-        </div>
+    <footer>
+        <p>© 2025 Extreme Rafting Adventure | David Canales</p>
+        <nav class="socialmedia">
+            <a href="https://facebook.com"><img src="images/facebook.png" alt="Facebook - visit our page"></a>
+            <a href="https://twitter.com"><img src="images/twitter.png" alt="Twitter - visit our page"></a>
+            <a href="https://instagram.com"><img src="images/instagram.png" alt="Instagram - visit our page"></a>
+        </nav>
     </footer>
-
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
