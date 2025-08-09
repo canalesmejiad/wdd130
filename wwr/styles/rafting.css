@@ -11,16 +11,15 @@
 
 :root {
     --primary-color: #4e8ab0;
+    /* azul de header */
     --secondary-color: #276baf;
     --accent1-color: #000;
     --accent2-color: #1b70bf;
     --heading-font: "Playfair Display", serif;
     --body-font: "Roboto", sans-serif;
 
-    /* Layout */
     --content-max: 840px;
-
-    /* Cards / Shadows */
+    /* ancho común */
     --radius: 8px;
     --shadow: 0 0 6px rgba(0, 0, 0, .10);
 }
@@ -38,7 +37,6 @@ body {
     line-height: 1.6;
 }
 
-/* Shared content width */
 main,
 footer {
     max-width: var(--content-max);
@@ -56,7 +54,7 @@ nav {
 h1,
 h2 {
     font-family: var(--heading-font);
-    color: var(--primary-color);
+    color: #2a2a2a;
     margin: .5rem 0 .75rem;
 }
 
@@ -66,44 +64,63 @@ img {
     height: auto;
 }
 
-/* ===== HEADER (shared across pages) ===== */
+/* ===== HEADER (uniforme como la captura) ===== */
 header {
     display: grid;
     grid-template-columns: auto 1fr auto;
+    /* logo | título | nav */
     align-items: center;
     gap: 1rem;
-    padding: 1rem 2rem;
+    padding: .75rem 2rem;
     background: var(--primary-color);
 }
 
 .logo {
-    max-height: 80px;
+    height: 64px;
+    width: auto;
 }
 
 header h1 {
     text-align: center;
-    font-size: 1.8rem;
-    color: #2a2a2a;
-    /* coherente con tus otras páginas */
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 3.2vw, 2.6rem);
+    color: #212121;
+    letter-spacing: .3px;
 }
 
 nav ul {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 3rem;
+    /* separación amplia */
     list-style: none;
 }
 
 nav a {
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     color: #000;
-    padding: .5rem 1rem;
-    border-radius: .5rem;
-    transition: background-color .25s ease;
+    padding: .25rem 0;
 }
 
 nav a:hover {
-    background: #fff;
+    opacity: .85;
+}
+
+/* Responsive header */
+@media (max-width: 700px) {
+    header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 /* ===== HERO (home) ===== */
@@ -148,7 +165,17 @@ nav a:hover {
     border-radius: var(--radius);
 }
 
-/* ===== “Adventures” gallery (used in about/home) ===== */
+@media (max-width: 600px) {
+    .hero img {
+        max-height: 320px;
+    }
+
+    .hero article img {
+        display: none;
+    }
+}
+
+/* ===== ADVENTURES (galería pequeña) ===== */
 .adventures {
     text-align: center;
 }
@@ -208,6 +235,12 @@ nav a:hover {
 .history img {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .35);
+}
+
+@media (max-width: 980px) {
+    .history-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ===== TEAM (contact) ===== */
@@ -300,7 +333,7 @@ nav a:hover {
     background: #005fa3;
 }
 
-/* ===== TRIPS (cards + table) ===== */
+/* ===== TRIPS (cards + table, compacto y consistente) ===== */
 .trips-grid {
     display: grid;
     gap: .75rem;
@@ -319,7 +352,7 @@ nav a:hover {
     width: 100%;
     height: 150px;
     object-fit: cover;
-    /* más pequeñas */
+    /* imágenes más pequeñas */
 }
 
 .trips-grid .card-body {
@@ -328,7 +361,7 @@ nav a:hover {
 
 .trips-grid .card-body h2 {
     font-size: 1.05rem;
-    color: var(--primary-color);
+    color: #2a2a2a;
     margin-bottom: .25rem;
 }
 
@@ -361,6 +394,7 @@ nav a:hover {
     border-radius: 6px;
 }
 
+/* Tabla de resumen */
 .trips-table {
     width: 100%;
     border-collapse: collapse;
@@ -379,7 +413,7 @@ nav a:hover {
     background: #f0f0f0;
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER (uniforme) ===== */
 footer {
     display: flex;
     justify-content: center;
@@ -407,33 +441,12 @@ footer .socialmedia img {
     height: 30px;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 980px) {
-    .history-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .adventure-gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
+/* ===== EXTRA RESPONSIVE ===== */
 @media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        gap: .5rem;
+    .adventure-gallery figure {
+        flex: 1 1 45%;
     }
 
-    .hero img {
-        max-height: 320px;
-    }
-
-    .hero article img {
-        display: none;
-    }
-
-    /* limpia en móvil */
     .trips-grid {
         grid-template-columns: 1fr;
     }
