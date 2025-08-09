@@ -42,7 +42,7 @@ footer {
     margin: 0 auto;
 }
 
-/* no aplicamos margin/padding global a <nav> para no romper el header */
+/* No aplicamos márgenes al <nav> global para no afectar el header */
 p,
 section,
 article {
@@ -178,34 +178,56 @@ header nav a:hover {
     }
 }
 
-/* ===== ADVENTURES (galería pequeña) ===== */
+/* ===== ADVENTURES (galería) — UNA SOLA FILA EN DESKTOP ===== */
 .adventures {
     text-align: center;
 }
 
+/* 🔹 fila única; wrap sólo en móvil */
 .adventure-gallery {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 1rem;
+    flex-wrap: nowrap;
+    /* no baja de fila en escritorio */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
 }
 
 .adventure-gallery figure {
-    flex: 1 1 18%;
-    min-width: 150px;
+    flex: 1 1 0;
+    /* reparten espacio por igual */
+    max-width: 220px;
+    /* asegura que quepan 4 en un row ancho */
+    background: #fdfdfd;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    text-align: center;
+    transition: transform .25s ease;
+}
+
+.adventure-gallery figure:hover {
+    transform: scale(1.05);
 }
 
 .adventure-gallery img {
     height: 120px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    width: 100%;
+    object-fit: cover;
 }
 
 .adventure-gallery figcaption {
-    margin-top: .5rem;
+    padding: .8rem;
     font-weight: 600;
-    font-size: .9rem;
+    font-size: 1rem;
     color: #333;
+}
+
+/* En móviles sí permitimos wrap */
+@media (max-width:900px) {
+    .adventure-gallery {
+        flex-wrap: wrap;
+    }
 }
 
 /* ===== HISTORY (about) ===== */
@@ -246,16 +268,15 @@ header nav a:hover {
     }
 }
 
-/* ===== TEAM (contact) — UNA SOLA FILA ===== */
+/* ===== TEAM (contact) — UNA SOLA FILA EN DESKTOP ===== */
 .team {
     margin: 3rem;
 }
 
-/* 🔹 fila única en pantallas anchas; centradas */
 .team-gallery {
     display: flex;
     flex-wrap: nowrap;
-    /* evita saltar de fila en desktop */
+    /* no baja de fila en escritorio */
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
@@ -263,9 +284,8 @@ header nav a:hover {
 
 .team-gallery figure {
     flex: 1 1 0;
-    /* reparten espacio por igual */
     max-width: 260px;
-    /* tope para que 3 quepan lado a lado */
+    /* 3 tarjetas en un row */
     background: #fdfdfd;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -283,7 +303,7 @@ header nav a:hover {
     font-weight: bold;
 }
 
-/* En móviles, sí permitimos que bajen a otra fila */
+/* En móviles permitimos wrap */
 @media (max-width:900px) {
     .team-gallery {
         flex-wrap: wrap;
@@ -453,8 +473,8 @@ footer .socialmedia img {
 
 /* ===== EXTRA RESPONSIVE ===== */
 @media (max-width:600px) {
-    .adventure-gallery figure {
-        flex: 1 1 45%;
+    .adventure-gallery img {
+        height: 110px;
     }
 
     .trips-grid {
