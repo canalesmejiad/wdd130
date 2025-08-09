@@ -1,3 +1,131 @@
+/* ===============================
+   Rafting Site
+   Author: David Canales
+   =============================== */
+
+/* ===== RESET & TOKENS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4e8ab0;
+    --secondary-color: #276baf;
+    --accent1-color: #000;
+    --accent2-color: #1b70bf;
+    --heading-font: "Playfair Display", serif;
+    --body-font: "Roboto", sans-serif;
+
+    --content-max: 840px;
+    --radius: 8px;
+    --shadow: 0 0 6px rgba(0, 0, 0, .10);
+}
+
+/* ===== BASE ===== */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    background: #fff;
+    line-height: 1.6;
+}
+
+main,
+footer {
+    max-width: var(--content-max);
+    margin: 0 auto;
+}
+
+/* No aplicamos márgenes al <nav> global para no afectar el header */
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: #2a2a2a;
+    margin: .5rem 0 .75rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== HEADER (uniforme) ===== */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    /* logo | título | nav */
+    align-items: center;
+    gap: 1rem;
+    padding: .75rem 2rem;
+    background: var(--primary-color);
+}
+
+.logo {
+    height: 64px;
+    width: auto;
+}
+
+header h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 3.2vw, 2.6rem);
+    color: #2a2a2a;
+    letter-spacing: .3px;
+}
+
+header nav {
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    padding: .25rem 0;
+}
+
+header nav a:hover {
+    opacity: .85;
+}
+
+@media (max-width:700px) {
+    header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    header nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
 /* ===== HERO (home) ===== */
 .hero {
     position: relative;
@@ -9,7 +137,7 @@
     object-fit: cover;
 }
 
-.hero .hero-title {
+.hero>h1 {
     position: absolute;
     top: 20px;
     left: 0;
@@ -18,8 +146,6 @@
     text-align: center;
     background: rgba(0, 0, 0, .85);
     color: #fff;
-    font-size: 1.6rem;
-    font-family: var(--heading-font);
 }
 
 .hero article {
@@ -42,12 +168,316 @@
     border-radius: var(--radius);
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
     .hero img {
         max-height: 320px;
     }
 
     .hero article img {
         display: none;
+    }
+}
+
+/* ===== ADVENTURES (galería) — UNA SOLA FILA EN DESKTOP ===== */
+.adventures {
+    text-align: center;
+}
+
+/* 🔹 fila única; wrap sólo en móvil */
+.adventure-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    /* no baja de fila en escritorio */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.adventure-gallery figure {
+    flex: 1 1 0;
+    /* reparten espacio por igual */
+    max-width: 220px;
+    /* asegura que quepan 4 en un row ancho */
+    background: #fdfdfd;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    text-align: center;
+    transition: transform .25s ease;
+}
+
+.adventure-gallery figure:hover {
+    transform: scale(1.05);
+}
+
+.adventure-gallery img {
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.adventure-gallery figcaption {
+    padding: .8rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* En móviles sí permitimos wrap */
+@media (max-width:900px) {
+    .adventure-gallery {
+        flex-wrap: wrap;
+    }
+}
+
+/* ===== HISTORY (about) ===== */
+.history {
+    padding: 2rem;
+    background: #f7f7f7;
+}
+
+.history h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: steelblue;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.history-grid p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.history img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .35);
+}
+
+@media (max-width:980px) {
+    .history-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== TEAM (contact) — UNA SOLA FILA EN DESKTOP ===== */
+.team {
+    margin: 3rem;
+}
+
+.team-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    /* no baja de fila en escritorio */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.team-gallery figure {
+    flex: 1 1 0;
+    max-width: 260px;
+    /* 3 tarjetas en un row */
+    background: #fdfdfd;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    text-align: center;
+    transition: transform .25s ease;
+}
+
+.team-gallery figure:hover {
+    transform: scale(1.05);
+}
+
+.team-gallery figcaption {
+    padding: .8rem;
+    font-weight: bold;
+}
+
+/* En móviles permitimos wrap */
+@media (max-width:900px) {
+    .team-gallery {
+        flex-wrap: wrap;
+    }
+}
+
+/* ===== MAP (contact) ===== */
+.map-container {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    display: block;
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    background: #fafafa;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .15);
+    margin-bottom: 2rem;
+}
+
+.contact-form label,
+.contact-form legend {
+    font-weight: 700;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: .7rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form fieldset {
+    border: none;
+    padding: 0;
+}
+
+.contact-form .submit-btn {
+    background: #07c;
+    color: #fff;
+    border: none;
+    padding: .8rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background .25s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background: #005fa3;
+}
+
+/* ===== TRIPS (cards + table) ===== */
+.trips-grid {
+    display: grid;
+    gap: .75rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-top: 1.5rem;
+}
+
+.trips-grid .card {
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.trips-grid .card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.trips-grid .card-body {
+    padding: .85rem;
+}
+
+.trips-grid .card-body h2 {
+    font-size: 1.05rem;
+    color: #2a2a2a;
+    margin-bottom: .25rem;
+}
+
+.trips-grid .card-body p,
+.trips-grid .card-body li {
+    font-size: .95rem;
+}
+
+.trips-grid ul {
+    padding-left: 1.2rem;
+    margin-top: .5rem;
+}
+
+.trips-grid .trip-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .6rem;
+}
+
+.trips-grid .trip-footer a {
+    text-decoration: none;
+    color: #fff;
+    background: var(--secondary-color);
+    padding: .4rem .7rem;
+    border-radius: 6px;
+}
+
+.trips-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.trips-table th,
+.trips-table td {
+    border: 1px solid rgba(0, 0, 0, .15);
+    padding: .55rem;
+    text-align: left;
+    font-size: .95rem;
+}
+
+.trips-table th {
+    background: #f0f0f0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background: #fff;
+    color: #000;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .socialmedia {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex: 1 1 100%;
+    margin-top: 1rem;
+}
+
+footer .socialmedia img {
+    height: 30px;
+}
+
+/* ===== EXTRA RESPONSIVE ===== */
+@media (max-width:600px) {
+    .adventure-gallery img {
+        height: 110px;
+    }
+
+    .trips-grid {
+        grid-template-columns: 1fr;
     }
 }
