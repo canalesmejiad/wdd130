@@ -16,15 +16,15 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER (same on all pages) -->
     <header>
         <img class="logo" src="images/z-crossedoars.jpeg" alt="Rafting Company Logo">
-        <h1>Extreme Rafting adventures</h1>
+        <h1>Extreme Rafting Adventures</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="trips.html">Trips</a></li>
+                <li><a href="trips.html" aria-current="page">Trips</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
@@ -37,40 +37,82 @@
             </p>
         </div>
 
-        <!-- Trip descriptions -->
-        <section class="container grid trips-grid">
-            <article class="card">
-                <img src="images/trip_family.jpg" alt="Family enjoying a calm rafting trip" class="card-img">
+        <!-- Trip descriptions (multi-column grid) -->
+        <section class="container grid trips-grid" aria-label="Trip descriptions">
+
+            <!-- Trip 1 -->
+            <article class="card trip">
+                <img src="images/happyclient_2025.jpg" alt="Family smiling while rafting gentle Class II rapids"
+                    class="card-img">
                 <div class="card-body">
                     <h2>Family Float • Class II</h2>
-                    <p>Perfect for beginners and families with kids ages 6+. Enjoy gentle rapids, scenic views, and
-                        plenty of splash without the big drops.</p>
-                    <p><strong>$79 / person</strong> — 3 hours, available daily at 9am & 1pm.</p>
+                    <p class="trip-meta"><strong>Duration:</strong> 3 hours · <strong>Schedule:</strong> Daily 9:00 AM &
+                        1:00 PM · <strong>Ages:</strong> 6+ · <strong>Season:</strong> May–September</p>
+                    <p>A scenic, splashy run perfect for first-timers and families who want fun without the fear. Gentle
+                        waves, swim breaks, and plenty of photo moments along the canyon.</p>
+                    <ul class="trip-includes">
+                        <li>Certified river guide</li>
+                        <li>Wetsuit, PFD, helmet, river shoes</li>
+                        <li>Snack pack & drinking water</li>
+                        <li>Free photo gallery after the trip</li>
+                        <li>Safety briefing before launch</li>
+                    </ul>
+                    <div class="trip-footer">
+                        <strong>$79 / person</strong>
+                        <a class="btn btn-primary" href="contact.html">Contact Us</a>
+                    </div>
                 </div>
             </article>
 
-            <article class="card">
-                <img src="images/trip_classic.jpg" alt="Raft tackling moderate rapids" class="card-img">
+            <!-- Trip 2 -->
+            <article class="card trip">
+                <img src="images/dilcia-safety.jpg" alt="Rafting guide giving safety instructions" class="card-img">
                 <div class="card-body">
                     <h2>Classic Half-Day • Class III</h2>
+                    <p class="trip-meta"><strong>Duration:</strong> 4 hours · <strong>Schedule:</strong> Daily 10:00 AM
+                        · <strong>Ages:</strong> 12+ · <strong>Season:</strong> May–September</p>
                     <p>Our most popular trip: exciting rapids, swim spots, and a great balance of thrill and relaxation.
-                        Ages 12+.</p>
-                    <p><strong>$109 / person</strong> — 4 hours, available daily at 10am.</p>
+                        Perfect for adventurous families and groups of friends.</p>
+                    <ul class="trip-includes">
+                        <li>Certified river guide</li>
+                        <li>Wetsuit, PFD, helmet, river shoes</li>
+                        <li>Riverside snack break</li>
+                        <li>Free action photos</li>
+                        <li>Safety briefing before launch</li>
+                    </ul>
+                    <div class="trip-footer">
+                        <strong>$109 / person</strong>
+                        <a class="btn btn-primary" href="contact.html">Contact Us</a>
+                    </div>
                 </div>
             </article>
 
-            <article class="card">
-                <img src="images/trip_bigwater.jpg" alt="Raft plunging into big whitewater" class="card-img">
+            <!-- Trip 3 -->
+            <article class="card trip">
+                <img src="images/david-manager.jpg" alt="Raft team navigating intense Class IV rapids" class="card-img">
                 <div class="card-body">
                     <h2>Big Water Full-Day • Class IV</h2>
-                    <p>High-adrenaline whitewater for experienced paddlers. Includes riverside lunch and pro photography
-                        package.</p>
-                    <p><strong>$179 / person</strong> — 7 hours, Fri–Sun only.</p>
+                    <p class="trip-meta"><strong>Duration:</strong> 7 hours · <strong>Schedule:</strong> Fri–Sun only ·
+                        <strong>Ages:</strong> 16+ · <strong>Season:</strong> June–August</p>
+                    <p>High-adrenaline whitewater for experienced paddlers. Includes riverside lunch and a pro
+                        photography package to capture every thrilling moment.</p>
+                    <ul class="trip-includes">
+                        <li>Certified senior river guide</li>
+                        <li>Full set of whitewater gear</li>
+                        <li>Riverside lunch</li>
+                        <li>Professional photo package</li>
+                        <li>Safety briefing before launch</li>
+                    </ul>
+                    <div class="trip-footer">
+                        <strong>$179 / person</strong>
+                        <a class="btn btn-primary" href="contact.html">Contact Us</a>
+                    </div>
                 </div>
             </article>
+
         </section>
 
-        <!-- Trips Table -->
+        <!-- Trips table -->
         <section class="container" style="margin-top:2rem;">
             <h2>Trip Overview</h2>
             <table class="trips-table">
@@ -109,7 +151,7 @@
             </table>
         </section>
 
-        <!-- Call to action -->
+        <!-- CTA to Contact page -->
         <section class="section cta">
             <div class="container cta-inner">
                 <div>
@@ -121,7 +163,7 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (same as other pages) -->
     <footer>
         <p>© 2025 Extreme Rafting Adventure | David Canales</p>
         <nav class="socialmedia">
@@ -129,9 +171,12 @@
             <a href="https://twitter.com"><img src="images/twitter.png" alt="Twitter - visit our page"></a>
             <a href="https://instagram.com"><img src="images/instagram.png" alt="Instagram - visit our page"></a>
         </nav>
+        <!-- Wireframe link (Trips page only) -->
+        <p><a href="images/trips-wireframe.jpg" target="_blank">View Trips Page Wireframe</a></p>
     </footer>
+
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('year')?.textContent = new Date().getFullYear();
     </script>
 </body>
 
