@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Browse our white water rafting trips — from family floats to extreme adventures. See details, prices, and availability." />
+    <meta name="author" content="David Canales" />
+    <title>Extreme Rafting | Trips & Adventures</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="rafting.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-logo">XR</span>
+                <span class="brand-name">Extreme Rafting</span>
+            </a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trips.html" aria-current="page">Trips</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a class="btn btn-primary" href="trips.html">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h1>Our Trips</h1>
+            <p class="muted">Choose your adventure — all trips include certified guides, safety gear, and free photos.
+            </p>
+        </div>
+
+        <!-- Trip descriptions -->
+        <section class="container grid trips-grid">
+            <article class="card">
+                <img src="images/trip_family.jpg" alt="Family enjoying a calm rafting trip" class="card-img">
+                <div class="card-body">
+                    <h2>Family Float • Class II</h2>
+                    <p>Perfect for beginners and families with kids ages 6+. Enjoy gentle rapids, scenic views, and
+                        plenty of splash without the big drops.</p>
+                    <p><strong>$79 / person</strong> — 3 hours, available daily at 9am & 1pm.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="images/trip_classic.jpg" alt="Raft tackling moderate rapids" class="card-img">
+                <div class="card-body">
+                    <h2>Classic Half-Day • Class III</h2>
+                    <p>Our most popular trip: exciting rapids, swim spots, and a great balance of thrill and relaxation.
+                        Ages 12+.</p>
+                    <p><strong>$109 / person</strong> — 4 hours, available daily at 10am.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="images/trip_bigwater.jpg" alt="Raft plunging into big whitewater" class="card-img">
+                <div class="card-body">
+                    <h2>Big Water Full-Day • Class IV</h2>
+                    <p>High-adrenaline whitewater for experienced paddlers. Includes riverside lunch and pro photography
+                        package.</p>
+                    <p><strong>$179 / person</strong> — 7 hours, Fri–Sun only.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Trips Table -->
+        <section class="container" style="margin-top:2rem;">
+            <h2>Trip Overview</h2>
+            <table class="trips-table">
+                <thead>
+                    <tr>
+                        <th>Trip</th>
+                        <th>Duration</th>
+                        <th>Difficulty</th>
+                        <th>Price</th>
+                        <th>Season</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Family Float</td>
+                        <td>3 hours</td>
+                        <td>Class II</td>
+                        <td>$79 / person</td>
+                        <td>May–Sept</td>
+                    </tr>
+                    <tr>
+                        <td>Classic Half-Day</td>
+                        <td>4 hours</td>
+                        <td>Class III</td>
+                        <td>$109 / person</td>
+                        <td>May–Sept</td>
+                    </tr>
+                    <tr>
+                        <td>Big Water Full-Day</td>
+                        <td>7 hours</td>
+                        <td>Class IV</td>
+                        <td>$179 / person</td>
+                        <td>Jun–Aug (Fri–Sun)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Call to action -->
+        <section class="section cta">
+            <div class="container cta-inner">
+                <div>
+                    <h2>Have questions or ready to book?</h2>
+                    <p class="muted">We’re here to help you plan your perfect river day.</p>
+                </div>
+                <p><a class="btn btn-primary" href="contact.html">Contact Us</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container foot">
+            <div>
+                <h3>Extreme Rafting</h3>
+                <p class="muted">123 River Road, Rapids City, WA • (360) 555-0199 • hello@extremerafting.com</p>
+                <ul class="social">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+                <!-- Link to wireframe image -->
+                <p><a href="images/water_rafting_routes.jpg" target="_blank">View Trips Page Wireframe</a></p>
+            </div>
+            <small class="muted">© <span id="year"></span> Extreme Rafting • All rights reserved.</small>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

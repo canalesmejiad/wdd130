@@ -635,3 +635,24 @@ img {
         inset: auto 0 4%
     }
 }
+
+.trips-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.trips-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.trips-table th,
+.trips-table td {
+    border: 1px solid rgba(255, 255, 255, .15);
+    padding: .75rem;
+    text-align: left;
+}
+
+.trips-table th {
+    background: rgba(255, 255, 255, .05);
+}
