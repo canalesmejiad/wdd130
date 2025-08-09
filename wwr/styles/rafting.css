@@ -320,3 +320,320 @@ footer .socialmedia img {
     height: 30px;
     margin: 0 0.5rem;
 }
+
+:root {
+    --bg: #0b1117;
+    --card: #0f1722;
+    --text: #e8eef6;
+    --muted: #a9b6c6;
+    --brand: #31d0ff;
+    --brand2: #00b37e;
+    --radius: 18px;
+    --shadow: 0 8px 30px rgba(0, 0, 0, .25);
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: 'Outfit', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(49, 208, 255, .08), transparent 50%),
+        radial-gradient(800px 500px at 110% 10%, rgba(0, 179, 126, .08), transparent 50%),
+        var(--bg);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block
+}
+
+.container {
+    width: min(1200px, 92%);
+    margin-inline: auto
+}
+
+.muted {
+    color: var(--muted)
+}
+
+.eyebrow {
+    color: var(--brand);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .75rem
+}
+
+/* Header */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to bottom, rgba(11, 17, 23, .85), rgba(11, 17, 23, .35));
+    border-bottom: 1px solid rgba(255, 255, 255, .06)
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .9rem 0
+}
+
+.brand {
+    display: flex;
+    gap: .7rem;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text)
+}
+
+.brand-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    letter-spacing: .5px;
+    background: linear-gradient(135deg, var(--brand), var(--brand2));
+    color: #07131a;
+    box-shadow: var(--shadow)
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 1.05rem
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    align-items: center
+}
+
+.nav-list a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+    padding: .5rem .75rem;
+    border-radius: 10px
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+    color: var(--text);
+    background: rgba(255, 255, 255, .06)
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none
+}
+
+.btn-primary {
+    color: #07131a;
+    background: linear-gradient(135deg, var(--brand), var(--brand2));
+    padding: .7rem 1rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow)
+}
+
+.btn-primary:hover {
+    filter: brightness(1.05)
+}
+
+.btn-ghost {
+    color: var(--brand);
+    padding: .7rem 1rem
+}
+
+/* HERO */
+.hero {
+    position: relative
+}
+
+.hero-img {
+    width: 100%;
+    height: clamp(320px, 60vh, 640px);
+    object-fit: cover
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: auto 0 8%;
+    /* left right bottom */
+    display: grid;
+    gap: .6rem;
+    width: min(1100px, 92%);
+    margin-inline: auto;
+    padding: 0 1rem
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: .4rem
+}
+
+.hero .muted {
+    max-width: 60ch
+}
+
+/* Sections */
+.section {
+    padding: clamp(2rem, 5vw, 4rem) 0
+}
+
+.section h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin: 0 0 1rem
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    gap: 1rem
+}
+
+.about-grid {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: var(--radius);
+    overflow: hidden
+}
+
+.card-img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    background: #0b141d
+}
+
+.card-body {
+    padding: 1rem
+}
+
+/* CTA band */
+.cta {
+    background: linear-gradient(135deg, rgba(49, 208, 255, .15), rgba(0, 179, 126, .12));
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    border-bottom: 1px solid rgba(255, 255, 255, .06)
+}
+
+.cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem
+}
+
+/* Newsletter */
+.newsletter-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: .8rem;
+    margin-top: .6rem
+}
+
+.field {
+    display: grid;
+    gap: .3rem
+}
+
+.field input {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: #0b121a;
+    color: var(--text);
+    padding: .7rem .8rem
+}
+
+.field label {
+    font-size: .9rem;
+    color: var(--muted)
+}
+
+/* Footer */
+.site-footer {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    color: var(--muted)
+}
+
+.foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem
+}
+
+.social {
+    display: flex;
+    gap: .6rem;
+    list-style: none;
+    padding: 0;
+    margin: .5rem 0
+}
+
+.social a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: .4rem .6rem;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 10px
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .newsletter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-inner {
+        flex-direction: column;
+        align-items: flex-start
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-list {
+        gap: .25rem
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr
+    }
+
+    .hero-overlay {
+        inset: auto 0 4%
+    }
+}
+
+``` **Image Checklist** ``` images/ rafting_hero.jpg (full-width hero image) offer_safety.jpg (grid card 1) offer_inclusive.jpg (grid card 2) offer_routes.jpg (grid card 3) ```
