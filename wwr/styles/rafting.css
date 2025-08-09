@@ -324,7 +324,7 @@ footer .socialmedia img {
 :root {
     --bg: #0b1117;
     --card: #0f1722;
-    --text: #e8eef6;
+    --text: black;
     --muted: #a9b6c6;
     --brand: #31d0ff;
     --brand2: #00b37e;
