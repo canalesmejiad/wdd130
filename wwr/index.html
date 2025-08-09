@@ -2,120 +2,67 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-        content="White water rafting trips, lessons, and adventures with certified guides. Family-friendly and pro-level runs, all the safety gear included" />
+        content="White water rafting trips, lessons, and adventures with certified guides. Family-friendly and pro-level runs, all safety gear included." />
     <meta name="author" content="David Canales" />
-    <title>Extreme Rafting | White Water adventures</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/rafting.css">
-    <title>Document</title>
+    <title>Extreme Rafting | Home</title>
+    <link rel="stylesheet" href="rafting.css">
 </head>
 
 <body>
-    <!-- Header (keep identical across site)-->
+
+    <!-- Header (shared across all pages) -->
     <header>
         <img class="logo" src="images/z-crossedoars.jpeg" alt="Rafting Company Logo">
-        <h1>Extreme Rafting adventures</h1>
+        <h1>Extreme Rafting Adventures</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="trips.html">Trips</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <!-- HERO: full-width image with absolute heading overlay-->
-        <section class="hero" aria-label="Rafting hero">
-            <img class="hero-img" src="images/hero.jpg" alt="Rafting charging through a whitewater rapid" />
-            <div class="hero-overlay">
-                <p class="eyebrow">White Water ⚪️ Pro Guides ⚪️ Safe Fun</p>
-                <h1>Experience the thrill of world-class whitewater.</h1>
-                <p class="muted">From biginner floats to big-water adventures - all gear includes</p>
-                <div class="hero-cta">
-                    <a class="btn btn-primary" href="trips.html">See Trips</a>
-                    <a class="btn btn-ghost" href="about.html">Why choose us →</a>
-                </div>
+
+        <!-- HERO con overlay absoluto (usa clases del CSS unificado) -->
+        <section class="hero" aria-label="Homepage hero">
+            <h1>Experience the thrill of world-class whitewater</h1>
+            <img src="images/hero.jpg" alt="Rafting Adventure">
+            <article>
+                <h2>All gear included</h2>
+                <img src="images/happyclient_2025.jpg" alt="Happy Client">
+                <p>From beginner floats to big-water adventures — certified guides, safety gear, and free photos.</p>
+                <p><a href="trips.html">See Trips →</a></p>
+            </article>
+        </section>
+
+        <!-- Pequeña sección “adventures” para mantener consistencia visual -->
+        <section class="adventures">
+            <h2>Why raft with us</h2>
+            <div class="adventure-gallery">
+                <figure>
+                    <img src="images/dilcia-safety.jpg" alt="Guide giving a safety briefing">
+                    <figcaption>Safety-first guides</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/happyclient_2025.jpg" alt="Guests enjoying the river">
+                    <figcaption>Trips for everyone</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/david-manager.jpg" alt="Team navigating rapids">
+                    <figcaption>Pro gear included</figcaption>
+                </figure>
             </div>
         </section>
 
-        <!--Purpose & Offering (CSS Grid with images + content)-->
-        <section class="section" id="highlights">
-            <div class="container">
-                <h2>Why raft with us</h2>
-                <p class="muted">certified guides, curated rivers, and memories that last.</p>
-                <div class="grid about-grid">
-                    <!--Card 1 -->
-                    <article class="card">
-                        <img src="images/safety_offer.jpg" alt="Guide giving a safety talk to rafters"
-                            class="card-img" />
-                        <div class="card-body">
-                            <h3>Safety First</h3>
-                            <p class="muted">Professionally trained guides, top-tier gear, and a thorough safety
-                                briefing before every launch</p>
-                        </div>
-                    </article>
-                    <!-- Card 2 -->
-                    <article class="card">
-                        <img src="images/water_rafting_gear.jpg"
-                            alt="Rafting gear neatly arranged: helmets, PDFs, wetsuits" class="card-img" />
-                        <div class="card-body">
-                            <h3>All-Inclusive</h3>
-                            <p class="muted">wetsuits, PFDs, helmets, river shoes, snacks, and free photo gallery after
-                                your trip.</p>
-                        </div>
-                    </article>
-                    <!-- Card 3-->
-                    <article class="card">
-                        <img src="images/water_rafting_routes.jpg" alt="Rafters navigating a scenic canyon"
-                            class="card-img" />
-                        <div class="card-body">
-                            <h3>Trip for Everyone</h3>
-                            <p class="muted">Family floats (Class II), classic splashy runs (Class III), and full-day
-                                big-water (Class IV). </p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action to trips.html -->
-        <section class="section cta">
-            <div class="container cta-inner">
-                <div>
-                    <h2>Ready to pick your trip?</h2>
-                    <p class="muted">Midweek special: <strong>15% off Tue-Thu</strong> with code
-                        <strong>FLOW15</strong>.
-                    </p>
-                </div>
-                <p><a class="btn btn-primary" href="trips.html" aria-label="Go to trips page">Explore Trips</a></p>
-            </div>
-        </section>
-
-        <!-- Newsletter signup (name + email) -->
-        <section class="section newsletter" aria-label="Newsletter signup">
-            <div class="container">
-                <h2>Get river updates & deals</h2>
-                <form class="newsletter-form" action="#" method="post">
-                    <div class="field">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" placeholder="Your name" required />
-                    </div>
-                    <div class="field">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="you@example.com" required />
-                    </div>
-                    <button class="btn btn-primary" type="submit">Subscribe</button>
-                </form>
-            </div>
-        </section>
     </main>
-    <!-- Footer (keep identical across site) -->
+
+    <!-- Footer (shared across all pages) -->
     <footer>
         <p>© 2025 Extreme Rafting Adventure | David Canales</p>
         <nav class="socialmedia">
@@ -124,9 +71,7 @@
             <a href="https://instagram.com"><img src="images/instagram.png" alt="Instagram - visit our page"></a>
         </nav>
     </footer>
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+
 </body>
 
 </html>
