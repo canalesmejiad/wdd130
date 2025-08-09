@@ -1,8 +1,9 @@
 /* ===============================
-   Rafting Site 
+   Rafting Site — Unified Styles
    Author: David Canales
    =============================== */
 
+/* ===== RESET & TOKENS ===== */
 * {
     margin: 0;
     padding: 0;
