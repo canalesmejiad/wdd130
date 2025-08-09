@@ -13,7 +13,7 @@
 
 <body>
 
-    <!-- Header (shared across all pages) -->
+    <!-- Header (shared) -->
     <header>
         <img class="logo" src="images/z-crossedoars.jpeg" alt="Rafting Company Logo">
         <h1>Extreme Rafting Adventures</h1>
@@ -29,7 +29,7 @@
 
     <main>
 
-        <!-- HERO con overlay absoluto (usa clases del CSS unificado) -->
+        <!-- HERO -->
         <section class="hero" aria-label="Homepage hero">
             <h1>Experience the thrill of world-class whitewater</h1>
             <img src="images/hero.jpg" alt="Rafting Adventure">
@@ -41,7 +41,7 @@
             </article>
         </section>
 
-        <!-- Pequeña sección “adventures” para mantener consistencia visual -->
+        <!-- Small gallery to match look & feel -->
         <section class="adventures">
             <h2>Why raft with us</h2>
             <div class="adventure-gallery">
@@ -60,9 +60,21 @@
             </div>
         </section>
 
+        <!-- Newsletter (name + email, requerido) -->
+        <section>
+            <h2>Get river updates & deals</h2>
+            <form class="contact-form" action="#" method="post">
+                <label for="nl-name">Name</label>
+                <input id="nl-name" name="name" type="text" placeholder="Your name" required>
+                <label for="nl-email">Email</label>
+                <input id="nl-email" name="email" type="email" placeholder="you@example.com" required>
+                <button class="submit-btn" type="submit">Subscribe</button>
+            </form>
+        </section>
+
     </main>
 
-    <!-- Footer (shared across all pages) -->
+    <!-- Footer (shared) -->
     <footer>
         <p>© 2025 Extreme Rafting Adventure | David Canales</p>
         <nav class="socialmedia">
